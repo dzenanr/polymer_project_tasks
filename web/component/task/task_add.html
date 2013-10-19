@@ -1,0 +1,57 @@
+<polymer-element name="task-add">
+  <template>
+    <style>
+      label {
+        font-family: verdana, sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        background: #336799;
+        padding: 1px;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+      }
+      input {
+        font-family: arial, sans-serif;
+        font-size: 14px;
+      }
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+      .marker {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #003366;
+        background: #ffe4b5;
+        padding: 1px;
+      }
+    </style>
+    <br/>
+    <span class="marker">Task of {{project.name}}</span>
+    <br/>
+    <label for="employee-lookup">Employee Lookup</label>
+    <select id="employee-lookup">
+      <option template repeat="{{employee in employees.internalList}}">{{employee.code}}</option>
+    </select>
+    <br/>
+    <label for="description">Description</label>
+    <input id="description" type="text" size="96"/>
+    <br/>
+    <button on-click="add">Add</button>
+    <span id="message"></span>
+  </template>
+  <script type="application/dart" src="task_add.dart"></script>
+</polymer-element>

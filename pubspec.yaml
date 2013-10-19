@@ -1,0 +1,9 @@
+name: polymer_project_tasks
+version: 0.0.1
+author: Dzenan Ridjanovic <dzenanr@gmail.com>
+description: A Polymer example with a many-to-many relationship and a lookup web component.
+homepage: http://ondart.me/
+dependencies:
+  dartlero:
+    git: git://github.com/dzenanr/dartlero.git
+  polymer: any

@@ -1,0 +1,43 @@
+<polymer-element name="polymer-app">
+  <link rel="import" href="component/employee/employee_table.html"/>
+  <link rel="import" href="component/project/project_table.html"/>
+  <template>
+    <style>
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+      .page-title {
+        font-family: arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #003366;
+        padding: 12px;
+      }
+    </style>
+    <div class="page-title">
+      Project Tasks
+      <button on-click="save">Save</button>
+    </div>
+    <project-table id="project-table"
+      projects="{{projects}}">
+    </project-table> 
+    <br/>  
+    <employee-table id="employee-table"
+      employees="{{employees}}">
+    </employee-table>  
+  </template>
+  <script type="application/dart" src="polymer_app.dart"></script>
+</polymer-element>

@@ -1,0 +1,26 @@
+Todo
+
+Old (from the Web UI version)
+
+- strange error:
+  update task description by Employee works only if the employee has more than 1 task
+  (the new value is there, but not immediately shown in task-table)
+  same for update task description by Project, works only if project has more than 1 task
+
+- remove the Save button and save data automatically
+
++ semantic relationship between Project and Employee is many-to-many
+  with Task as the intersection concept:
+  Project >--< Employee => Project --< Task >-- Employee
++ Project --< Task relationship is internal;
+  Employee --< Task relationship is external
++ projects are saved with their corresponding tasks;
+  employees are saved without tasks
++ internal children (project tasks) may be added, edited and removed
++ external children (employee tasks) may be only edited
+- introduce additions and removals of employee tasks
+
+New (Polymer.dart)
+
+- test
+- use images for buttons

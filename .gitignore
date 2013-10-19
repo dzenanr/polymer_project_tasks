@@ -1,0 +1,8 @@
+.DS_Store
+.buildlog
+packages
+pubspec.lock
+*.js
+*.js.deps
+*.js.map
+*~

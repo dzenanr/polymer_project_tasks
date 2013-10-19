@@ -1,0 +1,12 @@
+Questions
+
+===
+In task_table:
+<template if="{{project != null}}">
+  Tasks of {{project.name}}
+  <button id="show-add" class="button" on-click="show">Show Add</button>
+</template>
+ButtonElement showAddButton = $['show-add'];
+Cannot find the button by using its id!?
+===
+

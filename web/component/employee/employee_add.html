@@ -1,0 +1,48 @@
+<polymer-element name="employee-add">
+  <template>
+    <style>
+      label {
+        font-family: verdana, sans-serif;
+        font-weight: bold;
+        color: #ffffff;
+        background: #336799;
+        padding: 1px;
+        border-right: 1px solid #999999;
+        border-bottom: 1px solid #999999;
+      }
+      input {
+        font-family: arial, sans-serif;
+        font-size: 14px;
+      }
+      button {
+        padding: 1px;
+        background: #ffcc99;
+        border-right: 1px solid #999;
+        border-bottom: 1px solid #999;
+        border-style: outset;
+        border-color: #d7b9c9;
+        font-weight: bold;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      button:active {
+        background: orangered;
+        border-color: blue;
+      } 
+    </style>
+    <br/>
+    <label for="first-name">First Name</label>
+    <input id="first-name" type="text" size="32"/>
+    <br/>
+    <label for="last-name">Last Name</label>
+    <input id="last-name" type="text" size="32"/>
+    <br/>
+    <label for="email">Email</label>
+    <input id="email" type="text" size="48"/>
+    <br/>
+    <button on-click="add">Add</button>
+    <span id="message"></span>
+  </template>
+  <script type="application/dart" src="employee_add.dart"></script>
+</polymer-element>
