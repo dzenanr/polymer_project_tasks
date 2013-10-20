@@ -10,3 +10,22 @@ ButtonElement showAddButton = $['show-add'];
 Cannot find the button by using its id!?
 ===
 
+===
+How to select by name and use code?
+Now, select by code in task_add.html
+    <select id="employee-lookup">
+      <option template repeat="{{employee in employees.internalList}}">{{employee.code}}</option>
+    </select>
+and use code in task_add.dart
+SelectElement employeeLookup = $['employee-lookup'];
+...
+String code = employeeLookup.value;
+===
+
+===
+Can a Polymer component use CSS outside of the component?
+
+===
+
+
+

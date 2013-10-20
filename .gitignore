@@ -2,6 +2,7 @@
 .buildlog
 packages
 pubspec.lock
+out
 *.js
 *.js.deps
 *.js.map

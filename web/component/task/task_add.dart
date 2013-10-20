@@ -17,9 +17,10 @@ class TaskAdd extends PolymerElement {
     if (!error) {
       var task = new Task();
       task.project = project;
-      String employeeCode = employeeLookup.value;
-      task.employee = TasksModel.one().employees.find(employeeCode);
+      String code = employeeLookup.value;
+      task.employee = employees.find(code);
       task.description = description.value;
+      // project.tasks internal; employee.tasks external
       if (tasks.add(task) && task.employee.tasks.add(task)) {
         message.text = 'added';
         var polymerApp = query('#polymer-app');

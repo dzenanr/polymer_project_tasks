@@ -20,7 +20,11 @@ class TaskTable extends PolymerElement {
 
   show(Event e, var detail, Node target) {
     ButtonElement showAddButton = $['show-add'];
-    if (showAddButton.text == 'Show Add' && project != null) {
+    if (project == null && showAddButton.text == 'Add by Project') {
+      showAddButton.hidden = true;
+    } else if (project == null) {
+      showAddButton.text = 'Add by Project';
+    } else if (showAddButton.text == 'Show Add') {
       showAdd = true;
       showAddButton.text = 'Hide Add';
     } else {
@@ -38,7 +42,7 @@ class TaskTable extends PolymerElement {
   delete(Event e, var detail, Element target) {
     String code = target.attributes['code'];
     task = tasks.find(code);
-    tasks.remove(task);  // internal
+    task.project.tasks.remove(task);  // internal
     task.employee.tasks.remove(task); // external
   }
 }
