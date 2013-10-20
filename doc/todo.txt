@@ -21,6 +21,8 @@ New (Polymer.dart)
   employees are saved without tasks
 + internal children (project tasks) may be added, edited and removed
 + external children (employee tasks) may be only edited
++ when a task is added, updated or removed, project tasks and employee tasks
+  must be kept consistent (both in the model and in Polymer UI)
 - introduce additions and removals of employee tasks
 
 
