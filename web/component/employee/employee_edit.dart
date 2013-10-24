@@ -8,26 +8,18 @@ class EmployeeEdit extends PolymerElement {
   @published Employee employee;
   @published String email;
 
-  inserted() {
-    super.inserted();
+  EmployeeEdit.created() : super.created();
+
+  enteredView() {
+    super.enteredView();
     email = employee.email;
   }
 
   update(Event e, var detail, Node target) {
     employee.email = email;
     employees.order(); // to see a new email in the list
-    var polymerApp = query('#polymer-app');
-    var employeeTable = polymerApp.shadowRoot.query('#employee-table').xtag;
+    var polymerApp = querySelector('#polymer-app');
+    var employeeTable = polymerApp.shadowRoot.querySelector('#employee-table');
     employeeTable.showEdit = false;
   }
-
-  /*
-  update() {
-    InputElement email = query("#edit-employee-email");
-    employee.email = email.value;
-    var employeeTable = query('#employee-table').xtag;
-    employeeTable.employees.order();
-    employeeTable.showEmployeeEdit = false;
-  }
-  */
 }

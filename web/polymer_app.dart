@@ -9,10 +9,10 @@ class PolymerApp extends PolymerElement {
   static const String PROJECT_TASKS = 'polymer-project-tasks';
 
   TasksModel tasksModel;
-  Employees employees;
-  Projects projects;
+  @observable Employees employees;
+  @observable Projects projects;
 
-  PolymerApp() {
+  PolymerApp.created() : super.created() {
     // using singleton (one object only) pattern http://en.wikipedia.org/wiki/Singleton_pattern
     tasksModel = TasksModel.one();
     employees = tasksModel.employees;
@@ -22,21 +22,6 @@ class PolymerApp extends PolymerElement {
     //tasksModel.display();
     employees.internalList = toObservable(employees.internalList);
     projects.internalList = toObservable(projects.internalList);
-
-    /*
-    var categoryLinksModel = new CategoryLinksModel();
-    categories = categoryLinksModel.categories;
-
-    // load data
-    String json = window.localStorage[NAME];
-    if (json == null) {
-      categoryLinksModel.init();
-    } else {
-      categories.fromJson(JSON.decode(json));
-    }
-
-    categories.internalList = toObservable(categories.internalList);
-    */
   }
 
   loadEmployees() {

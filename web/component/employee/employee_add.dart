@@ -6,13 +6,9 @@ import 'package:polymer/polymer.dart';
 class EmployeeAdd extends PolymerElement {
   @published Employees employees;
 
+  EmployeeAdd.created() : super.created();
+
   add(Event e, var detail, Node target) {
-    /*
-    InputElement firstName = query("#first-name");
-    InputElement lastName = query("#add-employee-last-name");
-    InputElement email = query("#add-employee-email");
-    Element message = query("#add-employee-message");
-    */
     InputElement firstName = $['first-name'];
     InputElement lastName = $['last-name'];
     InputElement email = $['email'];
@@ -38,8 +34,8 @@ class EmployeeAdd extends PolymerElement {
 	    employee.email = email.value;
       if (employees.add(employee)) {
         message.text = 'added';
-        var polymerApp = query('#polymer-app');
-        var employeeTable = polymerApp.shadowRoot.query('#employee-table').xtag;
+        var polymerApp = querySelector('#polymer-app');
+        var employeeTable = polymerApp.shadowRoot.querySelector('#employee-table');
         employeeTable.employees.order(); // employees.order();
       } else {
         message.text = 'employee email already in use';

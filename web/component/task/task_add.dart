@@ -8,6 +8,8 @@ class TaskAdd extends PolymerElement {
   @published Tasks tasks;
   Employees employees = TasksModel.one().employees;
 
+  TaskAdd.created() : super.created();
+
   add(Event e, var detail, Node target) {
     InputElement description = $['description'];
     SelectElement employeeLookup = $['employee-lookup'];
@@ -23,9 +25,9 @@ class TaskAdd extends PolymerElement {
       // project.tasks internal; employee.tasks external
       if (tasks.add(task) && task.employee.tasks.add(task)) {
         message.text = 'added';
-        var polymerApp = query('#polymer-app');
-        var productTable = polymerApp.shadowRoot.query('#project-table').xtag;
-        var taskTable = productTable.shadowRoot.query('#task-table').xtag;
+        var polymerApp = querySelector('#polymer-app');
+        var productTable = polymerApp.shadowRoot.querySelector('#project-table');
+        var taskTable = productTable.shadowRoot.querySelector('#task-table');
         taskTable.tasks.order();
       } else {
         message.text = 'task with the same project and employee already exists';

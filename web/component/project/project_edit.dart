@@ -8,16 +8,18 @@ class ProjectEdit extends PolymerElement {
   @published Project project;
   @published String description;
 
-  inserted() {
-    super.inserted();
+  ProjectEdit.created() : super.created();
+
+  enteredView() {
+    super.enteredView();
     description = project.description;
   }
 
   update(Event e, var detail, Node target) {
     project.description = description;
     projects.order(); // to see a new description in the list
-    var polymerApp = query('#polymer-app');
-    var projectTable = polymerApp.shadowRoot.query('#project-table').xtag;
+    var polymerApp = querySelector('#polymer-app');
+    var projectTable = polymerApp.shadowRoot.querySelector('#project-table');
     projectTable.showEdit = false;
   }
 }

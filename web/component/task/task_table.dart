@@ -11,8 +11,10 @@ class TaskTable extends PolymerElement {
   @observable bool showAdd = false;
   @observable bool showEdit = false;
 
-  inserted() {
-    super.inserted();
+  TaskTable.created() : super.created();
+
+  enteredView() {
+    super.enteredView();
     if (project != null) tasks = project.tasks;
     if (employee != null) tasks = employee.tasks;
     tasks.internalList = toObservable(tasks.internalList);

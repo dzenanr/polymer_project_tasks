@@ -10,6 +10,8 @@ class ProjectTable extends PolymerElement {
   @observable bool showEdit = false;
   @observable bool showTasks = false;
 
+  ProjectTable.created() : super.created();
+
   show(Event e, var detail, Node target) {
     ButtonElement showAddButton = $['show-add'];
     if (showAddButton.text == 'Show Add') {
