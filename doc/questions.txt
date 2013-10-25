@@ -23,6 +23,11 @@ String code = employeeLookup.value;
 ===
 
 ===
+Remove project (with its tasks). In employee tasks of the removed project,
+the removed project is still there!?
+===
+
+===
 Can a Polymer component use CSS outside of the component?
 https://code.google.com/p/dart/issues/detail?id=12434
 ===

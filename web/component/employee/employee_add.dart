@@ -34,9 +34,7 @@ class EmployeeAdd extends PolymerElement {
 	    employee.email = email.value;
       if (employees.add(employee)) {
         message.text = 'added';
-        var polymerApp = querySelector('#polymer-app');
-        var employeeTable = polymerApp.shadowRoot.querySelector('#employee-table');
-        employeeTable.employees.order(); // employees.order();
+        employees.order();
       } else {
         message.text = 'employee email already in use';
       }

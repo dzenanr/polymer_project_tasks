@@ -25,10 +25,7 @@ class TaskAdd extends PolymerElement {
       // project.tasks internal; employee.tasks external
       if (tasks.add(task) && task.employee.tasks.add(task)) {
         message.text = 'added';
-        var polymerApp = querySelector('#polymer-app');
-        var productTable = polymerApp.shadowRoot.querySelector('#project-table');
-        var taskTable = productTable.shadowRoot.querySelector('#task-table');
-        taskTable.tasks.order();
+        tasks.order();
       } else {
         message.text = 'task with the same project and employee already exists';
       }

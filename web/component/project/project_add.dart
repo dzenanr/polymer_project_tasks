@@ -24,9 +24,7 @@ class ProjectAdd extends PolymerElement {
 	    project.description = description.value;
       if (projects.add(project)) {
         message.text = 'added';
-        var polymerApp = querySelector('#polymer-app');
-        var projectTable = polymerApp.shadowRoot.querySelector('#project-table');
-        projectTable.projects.order(); // projects.order();
+        projects.order();
       } else {
         message.text = 'project name already in use';
       }
