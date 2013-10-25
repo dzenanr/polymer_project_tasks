@@ -19,8 +19,10 @@ class TaskEdit extends PolymerElement {
     var polymerApp = querySelector('#polymer-app');
     var productTable = polymerApp.shadowRoot.querySelector('#project-table');
     var taskTable = productTable.shadowRoot.querySelector('#task-table');
-    taskTable.showEdit = false;
-    task.project.tasks.order();  // to see a new description in project tasks
+    if (taskTable != null) {
+      taskTable.showEdit = false;
+      task.project.tasks.order();  // to see a new description in project tasks
+    }
     task.employee.tasks.order(); // to see a new description in employee tasks
   }
 }

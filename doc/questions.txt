@@ -25,6 +25,33 @@ String code = employeeLookup.value;
 ===
 Remove project (with its tasks). In employee tasks of the removed project,
 the removed project is still there!?
+
+In project_table.dart:
+  delete(Event e, var detail, Element target) {
+    ...
+    // the problem remains even with the following
+    var polymerApp = querySelector('#polymer-app');
+    var employeeTable = polymerApp.shadowRoot.querySelector('#employee-table');
+    var taskTable = employeeTable.shadowRoot.querySelector('#task-table');
+    taskTable.tasks.order();
+  }
+
+Perhaps, we need in employee_table.html:
+    <template if="{{showTasks}}">
+      <task-table id="{{employee.code}}-task-table"
+        employee="{{employee}}"
+      >
+      </task-table>
+    </template>
+
+or
+
+in delete of project_table.dart iterate over all employees
+to find project tasks that should be removed from employee tasks
+
+or
+
+manage this directly in the model.
 ===
 
 ===
