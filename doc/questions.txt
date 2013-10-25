@@ -24,7 +24,7 @@ String code = employeeLookup.value;
 
 ===
 Remove project (with its tasks). In employee tasks of the removed project,
-the removed project is still there!?
+the removed project task is still there!?
 
 In project_table.dart:
   delete(Event e, var detail, Element target) {
