@@ -74,6 +74,17 @@ In project_table.dart:
 ===
 
 ===
+I wish I could remove set for internalList in dartlero and dartling.
+Now
+toObservable(employees.internalList);
+does not refresh, while
+employees.internalList = toObservable(employees.internalList);
+does refresh.
+This exposes an internal list to the external world,
+which breaks an encapsulation of entities.
+===
+
+===
 Can a Polymer component use CSS outside of the component?
 https://code.google.com/p/dart/issues/detail?id=12434
 ===
