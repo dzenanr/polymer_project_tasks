@@ -52,6 +52,25 @@ to find project tasks that should be removed from employee tasks
 or
 
 manage this directly in the model.
+
+Simple solution:
+In project_table.dart:
+  delete(Event e, var detail, Element target) {
+    String code = target.attributes['code'];
+    project = projects.find(code);
+    projects.remove(project);
+    showTasks = false;
+  }
+  ->
+    delete(Event e, var detail, Element target) {
+    String code = target.attributes['code'];
+    project = projects.find(code);
+    for (var task in project.tasks) {
+      task.employee.tasks.remove(task); // external
+    }
+    projects.remove(project); // internal
+    showTasks = false;
+  }
 ===
 
 ===
