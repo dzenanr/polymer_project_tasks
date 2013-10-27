@@ -32,7 +32,10 @@ class EmployeeTable extends PolymerElement {
   delete(Event e, var detail, Element target) {
     String code = target.attributes['code'];
     employee = employees.find(code);
-    employees.remove(employee);
+    for (var task in employee.tasks) {
+      task.project.tasks.remove(task); // internal
+    }
+    employees.remove(employee); // external
     showTasks = false;
   }
 

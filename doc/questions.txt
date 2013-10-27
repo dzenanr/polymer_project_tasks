@@ -71,6 +71,23 @@ In project_table.dart:
     projects.remove(project); // internal
     showTasks = false;
   }
+
+The same for:
+Remove employee (with its tasks). In project tasks of the removed employee,
+the removed empolyee task is still there!?
+Solution:
+In employee_table.dart:
+  delete(Event e, var detail, Element target) {
+    String code = target.attributes['code'];
+    employee = employees.find(code);
+    for (var task in employee.tasks) {
+      task.project.tasks.remove(task); // internal
+    }
+    employees.remove(employee); // external
+    showTasks = false;
+  }
+An alternative is to hide the Remove button in the employee table
+if there is at least one task assigned to the employee.
 ===
 
 ===
