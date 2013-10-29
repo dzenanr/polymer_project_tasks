@@ -76,7 +76,7 @@
         <template if="{{employee != null}}">
           Tasks of {{employee.name}}
         </template>
-        <button id="show-add" class="button" on-click="show">Show Add</button>
+        <button id="show-add" class="button" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
         <th>Project</th>
@@ -90,8 +90,8 @@
           <td>{{task.project.name}}</td>
           <td>{{task.employee.name}}</td>
           <td>{{task.description}}</td>
-          <td><button on-click="edit" code="{{task.code}}">Edit</button></td>
-          <td><button on-click="delete" code="{{task.code}}">Remove</button></td>
+          <td><button on-click="{{edit}}" code="{{task.code}}">Edit</button></td>
+          <td><button on-click="{{delete}}" code="{{task.code}}">Remove</button></td>
         </tr>
       </tbody>
     </table>

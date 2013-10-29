@@ -71,7 +71,7 @@
     <table>
       <caption class="marker">
         Employees
-        <button id="show-add" class="button" on-click="show">Show Add</button>
+        <button id="show-add" class="button" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
         <th>Name</th>
@@ -84,9 +84,9 @@
         <tr>
           <td>{{employee.name}}</td>
           <td>{{employee.email}}</td>
-          <td><button on-click="edit" code="{{employee.code}}">Edit</button></td>
-          <td><button on-click="delete" code="{{employee.code}}">Remove</button></td>
-          <td><button on-click="showEmployeeTasks" code="{{employee.code}}">Show</button>
+          <td><button on-click="{{edit}}" code="{{employee.code}}">Edit</button></td>
+          <td><button on-click="{{delete}}" code="{{employee.code}}">Remove</button></td>
+          <td><button on-click="{{showEmployeeTasks}}" code="{{employee.code}}">Show</button>
           </td>
         </tr>
       </tbody>

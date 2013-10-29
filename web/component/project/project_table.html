@@ -71,7 +71,7 @@
     <table>
       <caption class="marker">
         Projects
-        <button id="show-add" class="button" on-click="show">Show Add</button>
+        <button id="show-add" class="button" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
         <th>Name</th>
@@ -84,9 +84,9 @@
         <tr>
           <td>{{project.name}}</td>
           <td>{{project.description}}</td>
-          <td><button on-click="edit" code="{{project.code}}">Edit</button></td>
-          <td><button on-click="delete" code="{{project.code}}">Remove</button></td>
-          <td><button on-click="showProjectTasks" code="{{project.code}}">Show</button>
+          <td><button on-click="{{edit}}" code="{{project.code}}">Edit</button></td>
+          <td><button on-click="{{delete}}" code="{{project.code}}">Remove</button></td>
+          <td><button on-click="{{showProjectTasks}}" code="{{project.code}}">Show</button>
           </td>
         </tr>
       </tbody>
