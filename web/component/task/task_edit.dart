@@ -1,6 +1,7 @@
 import 'dart:html';
 import 'package:polymer_project_tasks/polymer_project_tasks.dart';
 import 'package:polymer/polymer.dart';
+import 'task_table.dart';
 
 @CustomTag('task-edit')
 class TaskEdit extends PolymerElement {
@@ -18,7 +19,7 @@ class TaskEdit extends PolymerElement {
     task.description = description;
     var polymerApp = querySelector('#polymer-app');
     var productTable = polymerApp.shadowRoot.querySelector('#project-table');
-    var taskTable = productTable.shadowRoot.querySelector('#task-table');
+    TaskTable taskTable = productTable.shadowRoot.querySelector('#task-table');
     if (taskTable != null) {
       taskTable.showEdit = false;
       task.project.tasks.order();  // to see a new description in project tasks
