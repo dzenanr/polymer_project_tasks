@@ -6,3 +6,6 @@ homepage: http://ondart.me/
 dependencies:
   dartlero: any
   polymer: any
+transformers:
+- polymer:
+    entry_points: web/polymer_project_tasks.html
