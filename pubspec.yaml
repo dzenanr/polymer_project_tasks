@@ -4,6 +4,7 @@ author: Dzenan Ridjanovic <dzenanr@gmail.com>
 description: A Polymer example with a many-to-many relationship and a lookup web component.
 homepage: http://ondart.me/
 dependencies:
+  browser: any
   dartlero: any
   polymer: any
 transformers:

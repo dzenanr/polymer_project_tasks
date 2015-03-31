@@ -1,5 +1,11 @@
 Todo
 
+Polymer.dart 0.16.0+7
+
+- a property update is not displayed in a table although the object is observed
+- replace a variable with the corresponding concept property
+  (e.g., employee.email instead of email)
+
 New (Polymer.dart)
 
 - error (entities.order() with 1 entity does not order and no change is observed):

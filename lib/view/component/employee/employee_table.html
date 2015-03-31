@@ -1,21 +1,22 @@
-<polymer-element name="project-table">
-  <link rel="import" href="project_add.html"/>
-  <link rel="import" href="project_edit.html"/>
-  <link rel="import" href="../task/task_table.html"/>
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/employee/employee_add.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/employee/employee_edit.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_table.html">
+
+<polymer-element name="employee-table">
   <template>
     <style>
       table {
         border-top: 1px solid #999;
         border-left: 1px solid #999;
         border-collapse: collapse;
-      }  
+      }
       caption {
         font-family: arial, sans-serif;
         font-size: 16px;
         font-weight: bold;
         color: #003366;
         padding: 1px;
-      }    
+      }
       th, td {
         padding: 1px;
         border-right: 1px solid #999999;
@@ -29,7 +30,7 @@
       }
       td {
         background: #ffe4b5;
-      }  
+      }
       button {
         padding: 1px;
         background: #ffcc99;
@@ -45,7 +46,7 @@
       button:active {
         background: orangered;
         border-color: blue;
-      } 
+      }
       .marker {
         font-family: arial, sans-serif;
         font-size: 16px;
@@ -53,50 +54,50 @@
         color: #003366;
         background: #ffe4b5;
         padding: 1px;
-      } 
+      }
     </style>
     <template if="{{showAdd}}">
-      <project-add
-        projects="{{projects}}"
+      <employee-add
+        employees="{{employees}}"
       >
-      </project-add>
+      </employee-add>
     </template>
     <template if="{{showEdit}}">
-      <project-edit
-        projects="{{projects}}"
-        project="{{project}}"
+      <employee-edit
+        employees="{{employees}}"
+        employee="{{employee}}"
       >
-      </project-edit>
+      </employee-edit>
     </template>
     <table>
       <caption class="marker">
-        Projects
+        Employees
         <button id="show-add" class="button" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
         <th>Name</th>
-        <th>Description</th>
+        <th>Email</th>
         <th>Edit</th>
         <th>Remove</th>
         <th>Tasks</th>
       </tr>
-      <tbody template repeat="{{project in projects.internalList}}">
+      <tbody template repeat="{{employee in employees.internalList}}">
         <tr>
-          <td>{{project.name}}</td>
-          <td>{{project.description}}</td>
-          <td><button on-click="{{edit}}" code="{{project.code}}">Edit</button></td>
-          <td><button on-click="{{delete}}" code="{{project.code}}">Remove</button></td>
-          <td><button on-click="{{showProjectTasks}}" code="{{project.code}}">Show</button>
+          <td>{{employee.name}}</td>
+          <td>{{employee.email}}</td>
+          <td><button on-click="{{edit}}" code="{{employee.code}}">Edit</button></td>
+          <td><button on-click="{{delete}}" code="{{employee.code}}">Remove</button></td>
+          <td><button on-click="{{showEmployeeTasks}}" code="{{employee.code}}">Show</button>
           </td>
         </tr>
       </tbody>
     </table>
     <template if="{{showTasks}}">
       <task-table id="task-table"
-        project="{{project}}"
+        employee="{{employee}}"
       >
       </task-table>
     </template>
   </template>
-  <script type="application/dart" src="project_table.dart"></script>
+  <script type="application/dart" src="employee_table.dart"></script>
 </polymer-element>

@@ -1,20 +1,22 @@
-<polymer-element name="task-table">
-  <link rel="import" href="task_add.html"/>
-  <link rel="import" href="task_edit.html"/>
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/project/project_add.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/project/project_edit.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_table.html">
+
+<polymer-element name="project-table">
   <template>
     <style>
       table {
         border-top: 1px solid #999;
         border-left: 1px solid #999;
         border-collapse: collapse;
-      }  
+      }
       caption {
         font-family: arial, sans-serif;
         font-size: 16px;
         font-weight: bold;
         color: #003366;
         padding: 1px;
-      }    
+      }
       th, td {
         padding: 1px;
         border-right: 1px solid #999999;
@@ -28,7 +30,7 @@
       }
       td {
         background: #ffe4b5;
-      }  
+      }
       button {
         padding: 1px;
         background: #ffcc99;
@@ -44,7 +46,7 @@
       button:active {
         background: orangered;
         border-color: blue;
-      } 
+      }
       .marker {
         font-family: arial, sans-serif;
         font-size: 16px;
@@ -52,49 +54,50 @@
         color: #003366;
         background: #ffe4b5;
         padding: 1px;
-      } 
+      }
     </style>
     <template if="{{showAdd}}">
-      <task-add
-        project="{{project}}"
-        tasks="{{tasks}}"
+      <project-add
+        projects="{{projects}}"
       >
-      </task-add>
+      </project-add>
     </template>
     <template if="{{showEdit}}">
-      <task-edit
-        tasks="{{tasks}}"
-        task="{{task}}"
+      <project-edit
+        projects="{{projects}}"
+        project="{{project}}"
       >
-      </task-edit>
+      </project-edit>
     </template>
     <table>
       <caption class="marker">
-        <template if="{{project != null}}">
-          Tasks of {{project.name}}
-        </template>
-        <template if="{{employee != null}}">
-          Tasks of {{employee.name}}
-        </template>
+        Projects
         <button id="show-add" class="button" on-click="{{show}}">Show Add</button>
       </caption>
       <tr>
-        <th>Project</th>
-        <th>Employee</th>
+        <th>Name</th>
         <th>Description</th>
         <th>Edit</th>
         <th>Remove</th>
+        <th>Tasks</th>
       </tr>
-      <tbody template repeat="{{task in tasks.internalList}}">
+      <tbody template repeat="{{project in projects.internalList}}">
         <tr>
-          <td>{{task.project.name}}</td>
-          <td>{{task.employee.name}}</td>
-          <td>{{task.description}}</td>
-          <td><button on-click="{{edit}}" code="{{task.code}}">Edit</button></td>
-          <td><button on-click="{{delete}}" code="{{task.code}}">Remove</button></td>
+          <td>{{project.name}}</td>
+          <td>{{project.description}}</td>
+          <td><button on-click="{{edit}}" code="{{project.code}}">Edit</button></td>
+          <td><button on-click="{{delete}}" code="{{project.code}}">Remove</button></td>
+          <td><button on-click="{{showProjectTasks}}" code="{{project.code}}">Show</button>
+          </td>
         </tr>
       </tbody>
     </table>
+    <template if="{{showTasks}}">
+      <task-table id="task-table"
+        project="{{project}}"
+      >
+      </task-table>
+    </template>
   </template>
-  <script type="application/dart" src="task_table.dart"></script>
+  <script type="application/dart" src="project_table.dart"></script>
 </polymer-element>

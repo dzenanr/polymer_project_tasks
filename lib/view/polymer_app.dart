@@ -1,7 +1,7 @@
 import 'dart:html';
 import 'dart:convert';
-import 'package:polymer_project_tasks/polymer_project_tasks.dart';
 import 'package:polymer/polymer.dart';
+import 'package:polymer_project_tasks/polymer_project_tasks.dart';
 
 @CustomTag('polymer-app')
 class PolymerApp extends PolymerElement {
@@ -56,6 +56,10 @@ class PolymerApp extends PolymerElement {
   }
 
   save(Event e, var detail, Node target) {
+    saveData();
+  }
+
+  saveData() {
     saveEmployees();
     saveProjects();
   }

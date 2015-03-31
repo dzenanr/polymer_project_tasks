@@ -1,4 +1,4 @@
 # Authors
 
-Dzenan Ridjanovic and Ivo Balbaert.
+Dzenan Ridjanovic
 

@@ -1,0 +1,87 @@
+Polymer Update
+
+pubspec.yaml
+  polymer: any
+
+----
+
+build.dart
+
+import 'package:polymer/builder.dart';
+
+void main() {
+  build(entryPoints: ['web/polymer_category_links.html']);
+}
+
+-->
+
+// Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
+
+// This file is only used by Dart Editor. It displays errors and warnings after
+// analyzing a polymer.dart app.
+
+export 'package:polymer/default_build.dart';
+
+----
+
+lib
+
++ add the view folder
++ in the view folder add the component folder
++ in the component folder add the employee folder
++ in the component folder add the project folder
++ in the component folder add the task folder
+
+web
+
++ move the corresponding component files from the web folder to the lib folder
++ delete the component folder in the web folder
++ move the polymer_app files from the web folder to the view folder
++ update the href attribute in polymer_project_tasks.html
+href="polymer_app.html"
+-->
+href="packages/polymer_project_tasks/view/polymer_app.html"
+move
+<script type="application/dart">export 'package:polymer/init.dart';</script>
+before the end of body
+
+lib
+
++ update view/polymer_app.html
+remove link tags in the polymer_element
+<link rel="import" href="component/employee/employee_table.html">
+<link rel="import" href="component/project/project_table.html">
+add link tags before the polymer_element
+<link rel="import" href="../../../packages/polymer_project_tasks/view/component/employee/employee_table.html">
+<link rel="import" href="../../../packages/polymer_project_tasks/view/component/project/project_table.html">
+
++ update view/component/employee html files
+employee_table.html
+remove link tags in the polymer_element
+add link tags before the polymer_element
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/employee/employee_add.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/employee/employee_edit.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_table.html">
+
++ update view/component/project html files
+project_table.html
+remove link tags in the polymer_element
+add link tags before the polymer_element
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/project/project_add.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/project/project_edit.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_table.html">
+
++ update view/component/task html files
+task_table.html
+remove link tags in the polymer_element
+add link tags before the polymer_element
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_add.html">
+<link rel="import" href="../../../../../packages/polymer_project_tasks/view/component/task/task_edit.html">
+
++ in edit dart files
+import 'concept_table.dart'; eg import 'employee_table.dart';
+change enteredView() --> attached()
+
++ in task_table.dart
+change enteredView() --> attached()

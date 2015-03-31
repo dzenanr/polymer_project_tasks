@@ -1,6 +1,7 @@
+<link rel="import" href="../../../packages/polymer_project_tasks/view/component/employee/employee_table.html">
+<link rel="import" href="../../../packages/polymer_project_tasks/view/component/project/project_table.html">
+
 <polymer-element name="polymer-app">
-  <link rel="import" href="component/employee/employee_table.html"/>
-  <link rel="import" href="component/project/project_table.html"/>
   <template>
     <style>
       button {
@@ -18,7 +19,7 @@
       button:active {
         background: orangered;
         border-color: blue;
-      } 
+      }
       .page-title {
         font-family: arial, sans-serif;
         font-size: 24px;
@@ -33,11 +34,11 @@
     </div>
     <project-table id="project-table"
       projects="{{projects}}">
-    </project-table> 
-    <br/>  
+    </project-table>
+    <br/>
     <employee-table id="employee-table"
       employees="{{employees}}">
-    </employee-table>  
+    </employee-table>
   </template>
   <script type="application/dart" src="polymer_app.dart"></script>
 </polymer-element>

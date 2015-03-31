@@ -13,8 +13,8 @@ class TaskTable extends PolymerElement {
 
   TaskTable.created() : super.created();
 
-  enteredView() {
-    super.enteredView();
+  attached() {
+    super.attached();
     if (project != null) tasks = project.tasks;
     if (employee != null) tasks = employee.tasks;
     tasks.internalList = toObservable(tasks.internalList);

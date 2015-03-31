@@ -10,8 +10,8 @@ class TaskEdit extends PolymerElement {
 
   TaskEdit.created() : super.created();
 
-  enteredView() {
-    super.enteredView();
+  attached() {
+    super.attached();
     description = task.description;
   }
 
@@ -22,9 +22,9 @@ class TaskEdit extends PolymerElement {
     TaskTable taskTable = productTable.shadowRoot.querySelector('#task-table');
     if (taskTable != null) {
       taskTable.showEdit = false;
-      task.project.tasks.order();  // to see a new description in project tasks
+      //task.project.tasks.order();  // to see a new description in project tasks
     }
-    task.employee.tasks.order(); // to see a new description in employee tasks
+    //task.employee.tasks.order(); // to see a new description in employee tasks
   }
 }
 
