@@ -6,25 +6,16 @@ import 'task_table.dart';
 @CustomTag('task-edit')
 class TaskEdit extends PolymerElement {
   @published Task task;
-  @published String description;
 
   TaskEdit.created() : super.created();
 
-  attached() {
-    super.attached();
-    description = task.description;
-  }
-
   update(Event e, var detail, Node target) {
-    task.description = description;
     var polymerApp = querySelector('#polymer-app');
     var productTable = polymerApp.shadowRoot.querySelector('#project-table');
     TaskTable taskTable = productTable.shadowRoot.querySelector('#task-table');
-    if (taskTable != null) {
-      taskTable.showEdit = false;
-      //task.project.tasks.order();  // to see a new description in project tasks
-    }
-    //task.employee.tasks.order(); // to see a new description in employee tasks
+    taskTable.showEdit = false;
+    polymerApp.saveData();
+    window.location.reload();
   }
 }
 

@@ -7,20 +7,13 @@ import 'project_table.dart';
 class ProjectEdit extends PolymerElement {
   @published Projects projects;
   @published Project project;
-  @published String description;
 
   ProjectEdit.created() : super.created();
 
-  attached() {
-    super.attached();
-    description = project.description;
-  }
-
   update(Event e, var detail, Node target) {
-    project.description = description;
-    //projects.order(); // to see a new description in the list
     var polymerApp = querySelector('#polymer-app');
-    ProjectTable projectTable = polymerApp.shadowRoot.querySelector('#project-table');
+    ProjectTable projectTable =
+        polymerApp.shadowRoot.querySelector('#project-table');
     projectTable.showEdit = false;
     polymerApp.saveData();
     window.location.reload();
