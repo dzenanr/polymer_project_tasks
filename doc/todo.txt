@@ -3,7 +3,7 @@ Todo
 Polymer.dart 0.16.0+7
 
 - a property update is not displayed in a table although the object is observed
-- replace a variable with the corresponding concept property
+- done: replace a variable with the corresponding concept property
   (e.g., employee.email instead of email)
 
 New (Polymer.dart)
@@ -14,7 +14,7 @@ New (Polymer.dart)
   same for update task description by Project, works only if project has more than 1 task
 - add tests to the model
 - manage add and remove consistency for project tasks and employee tasks in the model
-- use @observable in the model for refresh in Polymer UI
+- use @observable in the model (?) for refresh in Polymer UI
 - use images for buttons
 - remove the Save button and save data automatically
 

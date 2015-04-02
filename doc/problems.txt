@@ -2,6 +2,8 @@ Problems
 
 Polymer.dart 0.16.0+7
 
+-------------------------------------------------------------------------------
+Problem has disappeared:
 From Tools Output when running the app in Dartium:
 
 --- 11:17:14 AM Starting pub serve : polymer_project_tasks ---
@@ -21,7 +23,7 @@ deselect Use pub serve to serve the application
 
 - a property update is not displayed in a table although the object is observed
 
-used in employye and project edit
+used in employye, project ans task edit
     polymerApp.saveData();
     window.location.reload();
 to refresh the page (however, not a real solution)
